@@ -1,5 +1,22 @@
 // arrays defining cards and cards in play
-var cards = ['queen', 'queen', 'king', 'king'];
+var cards = [
+  {
+  rank: 'queen',
+  suit: 'hearts',
+  cardImage: "images/queen-of-hearts.png"},
+  {
+  rank: 'queen',
+  suit: 'diamonds',
+  cardImage: "images/queen-of-diamonds.png"},
+  {
+  rank: 'king',
+  suit: 'hearts',
+  cardImage: "images/king-of-hearts.png"},
+  {
+  rank: 'king',
+  suit: 'diamonds',
+  cardImage: "images/king-of-diamonds.png"}
+];
 var cardsInPlay = [];
 
 // function for checking for matching
@@ -14,9 +31,11 @@ function checkForMatch() {
 
 // Function for flipping card and logging it
 function flipCard(cardID) {
-  cardsInPlay.push(cardID);
+  cardsInPlay.push(cards[cardID].rank);
   checkForMatch();
-  console.log(cards[cardID]);
+  console.log(cards[cardID].rank);
+  console.log(cards[cardID].suit);
+  console.log(cards[cardID].cardImage);
 }
 
 
